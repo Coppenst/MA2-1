@@ -9,14 +9,12 @@ class Maker extends Model
 {
 	protected $table = 'makers';
 
-	protected $primaryKey = 'id';
+	protected $fillable = ['name', 'phone'];
 
-	protected $fillable = ['id', 'name', 'phone'];
-
-	protected $hidden = ['serie', 'created_at', 'updated_at'];
+	protected $hidden = ['id', 'updated_at', 'created_at'];
 
 	public function vehicles()
 	{
-		return $this->hasMany('App\Maker');
+		return $this->hasMany('App\Vehicle');
 	}
 }
